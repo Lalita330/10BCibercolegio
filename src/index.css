@@ -4159,3 +4159,48 @@ html[data-theme="light"] .resource-card:nth-child(even):hover h3,
 html[data-theme="light"] .resource-card:nth-child(even):hover .resource-number {
   color: var(--index-accent) !important;
 }
+
+/* Identidad del equipo en cabecera, pie e icono de pestaña. */
+.brand-mark.site-logo,
+.footer-mark.site-logo {
+  height: auto;
+  padding: 0;
+  display: block;
+  aspect-ratio: 0.735;
+  object-fit: cover;
+  color: transparent;
+  background: #f7f3ed;
+  border: 1px solid var(--gold);
+  border-radius: 48% 48% 13% 13% / 27% 27% 10% 10%;
+  box-shadow: 0 0 0 2px rgba(47, 56, 39, 0.62), 0 5px 16px rgba(24, 31, 19, 0.2);
+}
+
+.brand-mark.site-logo {
+  width: 38px;
+}
+
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-mark.site-logo {
+  width: 50px;
+}
+
+html[data-theme="light"] .brand-mark.site-logo,
+html[data-theme="light"] .footer-mark.site-logo {
+  background: #f7f3ed;
+  box-shadow: 0 0 0 2px rgba(92, 106, 75, 0.42), 0 5px 16px rgba(48, 55, 31, 0.12);
+}
+
+@media (max-width: 640px) {
+  .brand-mark.site-logo {
+    width: 34px;
+  }
+
+  .footer-mark.site-logo {
+    width: 46px;
+  }
+}

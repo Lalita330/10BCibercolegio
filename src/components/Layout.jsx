@@ -3,6 +3,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { navigation } from '../data/site'
 
 const THEME_STORAGE_KEY = 'representacion10b.theme.v2'
+const LOGO_SRC = `${import.meta.env.BASE_URL}assets/brand/logo-10b.webp`
 
 function readTheme() {
   try {
@@ -15,7 +16,7 @@ function readTheme() {
 function Brand() {
   return (
     <NavLink className="brand" to="/" aria-label="Ir a la portada">
-      <span className="brand-mark" aria-hidden="true">10B</span>
+      <img className="brand-mark site-logo" src={LOGO_SRC} alt="" aria-hidden="true" />
       <span className="brand-copy">
         <strong>Representación</strong>
         <small>Cibercolegio UCN · 2026</small>
@@ -136,7 +137,9 @@ export default function Layout() {
           <p className="privacy-note">
             Este sitio no recopila respuestas ni datos personales. Las preferencias de avisos permanecen únicamente en este dispositivo.
           </p>
-          <NavLink to="/" className="footer-mark" aria-label="Volver al inicio">10B</NavLink>
+          <NavLink to="/" className="footer-logo-link" aria-label="Volver al inicio">
+            <img className="footer-mark site-logo" src={LOGO_SRC} alt="" aria-hidden="true" />
+          </NavLink>
         </div>
       </footer>
     </div>
