@@ -38,7 +38,6 @@ export const embedPages = [
     provider: 'Google Forms',
     embedUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfoGbJtPcLeR0ZHlI1ZtKbUeXwf7hVxIPU6S6YQ34OdZ0hOiA/viewform?embedded=true',
     directUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfoGbJtPcLeR0ZHlI1ZtKbUeXwf7hVxIPU6S6YQ34OdZ0hOiA/viewform?usp=header',
-    directFirst: true,
     accent: 'gold',
   },
   {
@@ -49,7 +48,6 @@ export const embedPages = [
     provider: 'Google Forms',
     embedUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSePBroji-3c1wLa0n2F7OKll8lDebxq4qA75l42RxD5jXsUIw/viewform?embedded=true',
     directUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSePBroji-3c1wLa0n2F7OKll8lDebxq4qA75l42RxD5jXsUIw/viewform?usp=header',
-    directFirst: true,
     accent: 'brown',
   },
   {
