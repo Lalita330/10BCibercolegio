@@ -1,0 +1,91 @@
+export const navigation = [
+  { path: '/', label: 'Portada', shortLabel: 'Inicio', icon: '01' },
+  { path: '/permisos', label: 'Permisos', icon: '02' },
+  { path: '/soporte', label: 'Soporte técnico', icon: '03' },
+  { path: '/propuestas', label: 'Propuestas', icon: '04' },
+  { path: '/quejas', label: 'Quejas', icon: '05' },
+  { path: '/cartas-anonimas', label: 'Cartas anónimas', icon: '06' },
+  { path: '/horario', label: 'Horario', icon: '07' },
+  { path: '/circulares', label: 'Circulares', icon: '08' },
+]
+
+export const embedPages = [
+  {
+    path: '/permisos',
+    eyebrow: 'Gestiones del curso',
+    title: 'Formulario de permisos',
+    description: 'Envía una solicitud de permiso directamente al formulario oficial. El sitio no ve, guarda ni procesa tus respuestas.',
+    provider: 'ClickUp Forms',
+    embedUrl: 'https://forms.clickup.com/3095619/f/2yf23-15217/8D83F3MMNYMBULX4F4',
+    directUrl: 'https://forms.clickup.com/3095619/f/2yf23-15217/8D83F3MMNYMBULX4F4',
+    accent: 'brown',
+  },
+  {
+    path: '/soporte',
+    eyebrow: 'Ayuda digital',
+    title: 'Soporte técnico',
+    description: 'Reporta dificultades de acceso o funcionamiento. La información se envía directamente al formulario oficial de soporte.',
+    provider: 'ClickUp Forms',
+    embedUrl: 'https://forms.clickup.com/3095619/f/2yf23-34437/RTSWZV9WXSPYRXVEM7',
+    directUrl: 'https://forms.clickup.com/3095619/f/2yf23-34437/RTSWZV9WXSPYRXVEM7',
+    accent: 'purple',
+  },
+  {
+    path: '/propuestas',
+    eyebrow: 'Participación 10B',
+    title: 'Propuestas',
+    description: 'Comparte una iniciativa para el curso. Tu respuesta viaja directamente a Google Forms y nunca pasa por este sitio.',
+    provider: 'Google Forms',
+    embedUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfoGbJtPcLeR0ZHlI1ZtKbUeXwf7hVxIPU6S6YQ34OdZ0hOiA/viewform?embedded=true',
+    directUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfoGbJtPcLeR0ZHlI1ZtKbUeXwf7hVxIPU6S6YQ34OdZ0hOiA/viewform?usp=header',
+    accent: 'gold',
+  },
+  {
+    path: '/quejas',
+    eyebrow: 'Canal del curso',
+    title: 'Formulario de quejas',
+    description: 'Expresa una situación que deba ser atendida. El formulario se abre de manera segura y sus respuestas no se almacenan aquí.',
+    provider: 'Google Forms',
+    embedUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSePBroji-3c1wLa0n2F7OKll8lDebxq4qA75l42RxD5jXsUIw/viewform?embedded=true',
+    directUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSePBroji-3c1wLa0n2F7OKll8lDebxq4qA75l42RxD5jXsUIw/viewform?usp=header',
+    accent: 'brown',
+  },
+  {
+    path: '/cartas-anonimas',
+    eyebrow: 'Espacio de expresión',
+    title: 'Cartas anónimas',
+    description: 'Un espacio en Padlet para compartir mensajes con el equipo de representación. Revisa las condiciones de privacidad del servicio antes de publicar.',
+    provider: 'Padlet',
+    embedUrl: 'https://padlet.com/embed/uwvsmqgy7dhlnqek',
+    directUrl: 'https://padlet.com/hsmgdjcp/cartas-anonimas-10b-uwvsmqgy7dhlnqek',
+    accent: 'purple',
+  },
+  {
+    path: '/circulares',
+    eyebrow: 'Información institucional',
+    title: 'Mapa de circulares',
+    description: 'Consulta en un solo lugar las circulares publicadas para el año 2026.',
+    provider: 'Padlet',
+    embedUrl: 'https://padlet.com/embed/kudvcdozktocb2wj',
+    directUrl: 'https://padlet.com/induccion/tablero-de-circulares-ano-2026-kudvcdozktocb2wj',
+    accent: 'gold',
+  },
+]
+
+export const team = [
+  {
+    name: 'Sara Valentina Quiroga Sánchez',
+    image: '/assets/equipo/sara-valentina.webp',
+    position: 'left',
+  },
+  {
+    name: 'Habyka Sarita Martínez Guaidia',
+    image: '/assets/equipo/habyka-sarita.webp',
+    position: 'center',
+  },
+  {
+    name: 'Dania Jireth Cabrera Peña',
+    image: '/assets/equipo/dania-jireth.webp',
+    position: 'right',
+  },
+]
