@@ -11,7 +11,7 @@ const STORAGE_KEY = 'representacion10b.notificationSettings.v1'
 const CUSTOM_SOUND_STORAGE_KEY = 'representacion10b.customSound.v1'
 const CUSTOM_SOUND_ID = 'custom'
 const SENT_KEY_PREFIX = 'representacion10b.sent.'
-const MAX_CUSTOM_SOUND_BYTES = 768 * 1024
+const MAX_CUSTOM_SOUND_BYTES = 1024 * 1024
 const MAX_CUSTOM_SOUND_SECONDS = 5
 
 const acceptedAudioTypes = {
@@ -251,7 +251,7 @@ export default function SchedulePage() {
         throw new Error('Formato no permitido. Usa un archivo MP3, WAV u OGG.')
       }
       if (file.size > MAX_CUSTOM_SOUND_BYTES) {
-        throw new Error('El archivo supera el límite de 768 KB.')
+        throw new Error('El archivo supera el límite de 1 MB.')
       }
 
       const buffer = await file.arrayBuffer()
@@ -467,7 +467,7 @@ export default function SchedulePage() {
             <div className="custom-upload-heading">
               <div>
                 <strong>Subir tu propio sonido</strong>
-                <span>MP3, WAV u OGG · máximo 768 KB y 5 segundos</span>
+                <span>MP3, WAV u OGG · máximo 1 MB y 5 segundos</span>
               </div>
               <label className={`upload-sound-button${uploadingSound ? ' is-busy' : ''}`}>
                 <input

@@ -3699,13 +3699,13 @@ body::before {
    ================================================================ */
 
 :root {
-  --olive-1000: #34401f;
-  --olive-950: #3f4d24;
-  --olive-900: #4b5b29;
-  --olive-850: #53642e;
-  --olive-800: #5c6e34;
-  --olive-700: #6f8043;
-  --olive-600: #8a995b;
+  --olive-1000: #2f3827;
+  --olive-950: #39452f;
+  --olive-900: #455238;
+  --olive-850: #505e41;
+  --olive-800: #5c6a4b;
+  --olive-700: #71805e;
+  --olive-600: #8d9b79;
   --brown-900: #3f2c21;
   --brown-700: #74513a;
   --brown-500: #a27a55;
@@ -3733,14 +3733,14 @@ body {
 
 .site-header {
   color: var(--beige);
-  background: rgba(63, 77, 36, 0.97);
+  background: rgba(57, 69, 47, 0.97);
   border-bottom-color: rgba(221, 198, 129, 0.34);
 }
 
 .hero {
   color: var(--beige);
   background:
-    linear-gradient(90deg, rgba(63, 77, 36, 0.99) 0 43%, rgba(75, 91, 41, 0.97) 43% 100%),
+    linear-gradient(90deg, rgba(57, 69, 47, 0.99) 0 43%, rgba(69, 82, 56, 0.97) 43% 100%),
     var(--olive-950);
 }
 
@@ -3761,7 +3761,7 @@ body {
 }
 
 .member-copy {
-  background: rgba(52, 64, 31, 0.96);
+  background: rgba(47, 56, 39, 0.96);
 }
 
 .team-member-left .member-copy {
@@ -3854,7 +3854,7 @@ body {
 }
 
 .table-scroll tbody th {
-  background: rgba(52, 64, 31, 0.78);
+  background: rgba(47, 56, 39, 0.78);
 }
 
 .table-scroll .break-row th,
@@ -3870,7 +3870,7 @@ body {
 }
 
 .notification-toggle {
-  background: rgba(75, 91, 41, 0.32);
+  background: rgba(69, 82, 56, 0.32);
 }
 
 .notification-toggle.is-on,
@@ -3880,7 +3880,7 @@ body {
 }
 
 .settings-message {
-  background: rgba(75, 91, 41, 0.42);
+  background: rgba(69, 82, 56, 0.42);
 }
 
 .button-primary:hover {
@@ -3970,7 +3970,13 @@ html[data-theme="light"] .team-member-center .portrait-orbit {
   box-shadow: 0 0 0 5px #eef0dc;
 }
 
-html[data-theme="light"] .resources-section,
+html[data-theme="light"] .resources-section {
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, transparent 0 12%, rgba(69, 105, 122, 0.055) 12% 12.08%, transparent 12.08%),
+    #f5f3e8;
+}
+
 html[data-theme="light"] .trust-section {
   color: var(--ink);
   background:
@@ -4110,5 +4116,150 @@ html[data-theme="light"] .privacy-note {
 @media (max-width: 960px) {
   html[data-theme="light"] .hero {
     background: linear-gradient(180deg, #d6dbb9 0 43%, #eef0dc 43% 100%);
+  }
+}
+
+/* Acceso robusto a Google Forms cuando el navegador bloquea iframes externos. */
+.iframe-shell.is-direct-entry {
+  min-height: 520px;
+  background: var(--olive-850);
+}
+
+.external-form-gate {
+  min-height: 520px;
+  padding: clamp(38px, 8vw, 110px);
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  color: var(--beige);
+  background:
+    linear-gradient(90deg, transparent 0 18%, rgba(221, 198, 129, 0.09) 18% 18.12%, transparent 18.12%),
+    radial-gradient(rgba(242, 231, 210, 0.1) 0.5px, transparent 0.6px) 0 0 / 6px 6px,
+    var(--olive-850);
+}
+
+.external-form-seal {
+  width: 62px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  margin-bottom: 28px;
+  color: var(--gold-soft);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 4px var(--olive-850), inset 0 0 0 5px rgba(221, 198, 129, 0.34);
+  font-family: var(--display);
+  font-size: 1.08rem;
+}
+
+.external-form-gate h2 {
+  max-width: 720px;
+  margin: 12px 0 14px;
+  color: var(--beige);
+  font-family: var(--display);
+  font-size: clamp(2.25rem, 6vw, 4.8rem);
+  font-weight: 500;
+  line-height: 0.96;
+}
+
+.external-form-gate > p:not(.eyebrow) {
+  max-width: 610px;
+  margin: 0;
+  color: rgba(242, 231, 210, 0.7);
+  line-height: 1.75;
+}
+
+.external-form-actions {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* En el índice, cada fila responde alternando morado y azul. */
+.resource-card:nth-child(odd):hover {
+  background: rgba(189, 172, 205, 0.11);
+  border-bottom-color: var(--purple-soft);
+}
+
+.resource-card:nth-child(even):hover {
+  background: rgba(126, 169, 187, 0.11);
+  border-bottom-color: #9fc4d2;
+}
+
+.resource-card:nth-child(odd):hover h3,
+.resource-card:nth-child(odd):hover .resource-number {
+  color: var(--purple-soft) !important;
+}
+
+.resource-card:nth-child(even):hover h3,
+.resource-card:nth-child(even):hover .resource-number {
+  color: #a9cbd8 !important;
+}
+
+html[data-theme="light"] .external-form-gate {
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, transparent 0 18%, rgba(69, 105, 122, 0.08) 18% 18.12%, transparent 18.12%),
+    radial-gradient(rgba(48, 55, 31, 0.09) 0.5px, transparent 0.6px) 0 0 / 6px 6px,
+    #f5f3e8;
+}
+
+html[data-theme="light"] .iframe-shell.is-direct-entry {
+  background: #f5f3e8;
+}
+
+html[data-theme="light"] .external-form-seal {
+  color: var(--brown-700);
+  border-color: var(--brown-700);
+  box-shadow: inset 0 0 0 4px #f5f3e8, inset 0 0 0 5px rgba(116, 81, 58, 0.25);
+}
+
+html[data-theme="light"] .external-form-gate h2 {
+  color: var(--ink);
+}
+
+html[data-theme="light"] .external-form-gate > p:not(.eyebrow),
+html[data-theme="light"] .external-form-gate .button-secondary {
+  color: rgba(48, 55, 31, 0.7);
+}
+
+html[data-theme="light"] .resource-card:nth-child(odd):hover {
+  background: rgba(112, 91, 131, 0.1);
+  border-bottom-color: var(--purple);
+}
+
+html[data-theme="light"] .resource-card:nth-child(even):hover {
+  background: rgba(69, 105, 122, 0.1);
+  border-bottom-color: var(--index-accent);
+}
+
+html[data-theme="light"] .resource-card:nth-child(odd):hover h3,
+html[data-theme="light"] .resource-card:nth-child(odd):hover .resource-number {
+  color: var(--purple) !important;
+}
+
+html[data-theme="light"] .resource-card:nth-child(even):hover h3,
+html[data-theme="light"] .resource-card:nth-child(even):hover .resource-number {
+  color: var(--index-accent) !important;
+}
+
+@media (max-width: 640px) {
+  .iframe-shell.is-direct-entry,
+  .external-form-gate {
+    min-height: 430px;
+  }
+
+  .external-form-gate {
+    padding: 34px 24px;
+  }
+
+  .external-form-actions {
+    width: 100%;
+    display: grid;
+  }
+
+  .external-form-actions .button {
+    width: 100%;
   }
 }
