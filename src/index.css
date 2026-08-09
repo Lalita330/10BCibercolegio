@@ -3716,6 +3716,7 @@ body::before {
   --blue-800: #496f80;
   --blue-700: #5e8493;
   --blue-accent: #496f80;
+  --index-accent: #45697a;
   --purple: #705b83;
   --purple-soft: #bdaccd;
   --beige: #f2e7d2;
@@ -3763,8 +3764,22 @@ body {
   background: rgba(52, 64, 31, 0.96);
 }
 
+.team-member-left .member-copy {
+  background: rgba(69, 105, 122, 0.98);
+  border-top-color: #8fb4c4;
+  border-bottom-color: #314f5c;
+}
+
 .team-member-center .member-copy {
-  background: rgba(63, 44, 33, 0.97);
+  background: rgba(150, 80, 51, 0.98);
+  border-top-color: #d5a35e;
+  border-bottom-color: #633726;
+}
+
+.team-member-right .member-copy {
+  background: rgba(112, 91, 131, 0.98);
+  border-top-color: #bdaccd;
+  border-bottom-color: #4d3d5b;
 }
 
 .resources-section {
@@ -3973,6 +3988,28 @@ html[data-theme="light"] .resource-card p,
 html[data-theme="light"] .resource-card:hover p,
 html[data-theme="light"] .trust-copy > p:last-child {
   color: rgba(48, 55, 31, 0.62);
+}
+
+html[data-theme="light"] .resource-grid {
+  border-top-color: var(--index-accent);
+}
+
+html[data-theme="light"] .resource-card,
+html[data-theme="light"] .resource-card:hover {
+  border-bottom-color: rgba(69, 105, 122, 0.32);
+}
+
+html[data-theme="light"] .resource-card:hover {
+  border-bottom-color: var(--index-accent);
+}
+
+html[data-theme="light"] .resource-number {
+  color: var(--index-accent) !important;
+  border-right-color: rgba(69, 105, 122, 0.4);
+}
+
+html[data-theme="light"] .resource-card:hover h3 {
+  color: var(--index-accent);
 }
 
 html[data-theme="light"] .trust-mark {

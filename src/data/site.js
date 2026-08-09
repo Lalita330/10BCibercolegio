@@ -79,8 +79,8 @@ export const team = [
     position: 'left',
   },
   {
-    name: 'Habyka Sarita Martínez Guaidia',
-    image: '/assets/equipo/habyka-sarita.webp',
+    name: 'Habyba Sarita Martínez Guaidia',
+    image: '/assets/equipo/habyba-sarita.webp',
     position: 'center',
   },
   {

@@ -3,7 +3,7 @@ FOTOS DEL EQUIPO
 Para reemplazar las siluetas, agrega tres imágenes WebP verticales en esta carpeta con estos nombres exactos:
 
 - sara-valentina.webp
-- habyka-sarita.webp
+- habyba-sarita.webp
 - dania-jireth.webp
 
 Tamaño recomendado: 900 × 1100 px. El sitio recorta automáticamente cada imagen dentro del marco ovalado.
