@@ -2,13 +2,13 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { navigation } from '../data/site'
 
-const THEME_STORAGE_KEY = 'representacion10b.theme.v1'
+const THEME_STORAGE_KEY = 'representacion10b.theme.v2'
 
 function readTheme() {
   try {
-    return window.localStorage.getItem(THEME_STORAGE_KEY) === 'light' ? 'light' : 'dark'
+    return window.localStorage.getItem(THEME_STORAGE_KEY) === 'dark' ? 'dark' : 'light'
   } catch {
-    return 'dark'
+    return 'light'
   }
 }
 

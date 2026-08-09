@@ -1904,26 +1904,26 @@ button {
 }
 
 /* ================================================================
-   TEMA OLIVA + MODO CLARO/OSCURO + CONTROLES DE AUDIO
+   TEMA AZUL + MODO CLARO/OSCURO + CONTROLES DE AUDIO
    ================================================================ */
 
 :root {
-  --olive-1000: #263019;
-  --olive-950: #303b1f;
-  --olive-900: #3b4827;
-  --olive-850: #44512d;
-  --olive-800: #4e5c34;
-  --olive-700: #606d42;
-  --olive-600: #788553;
+  --olive-1000: #0e2b49;
+  --olive-950: #123a61;
+  --olive-900: #1b4e79;
+  --olive-850: #255e8b;
+  --olive-800: #2d6a96;
+  --olive-700: #4b84ac;
+  --olive-600: #73a3c1;
 }
 
 html:not([data-theme]),
-html[data-theme="dark"] {
-  color-scheme: dark;
-}
-
 html[data-theme="light"] {
   color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 .theme-ready body,
@@ -2234,7 +2234,7 @@ body {
 /* Paleta clara diseñada manualmente */
 html[data-theme="light"] body {
   color: var(--blue-950);
-  background: #ece3cf;
+  background: #e7f0f5;
 }
 
 html[data-theme="light"] body::before {
@@ -2244,8 +2244,8 @@ html[data-theme="light"] body::before {
 
 html[data-theme="light"] .site-header {
   color: var(--blue-950);
-  background: rgba(241, 234, 218, 0.97);
-  border-bottom-color: rgba(78, 92, 52, 0.42);
+  background: rgba(220, 235, 244, 0.97);
+  border-bottom-color: rgba(18, 58, 97, 0.28);
 }
 
 html[data-theme="light"] .brand-mark,
@@ -2274,8 +2274,8 @@ html[data-theme="light"] .nav-index {
 
 html[data-theme="light"] .theme-toggle {
   color: rgba(16, 35, 43, 0.58);
-  background: rgba(78, 92, 52, 0.11);
-  border-color: rgba(78, 92, 52, 0.5);
+  background: rgba(45, 106, 150, 0.11);
+  border-color: rgba(18, 58, 97, 0.38);
 }
 
 html[data-theme="light"] .menu-button {
@@ -2289,8 +2289,8 @@ html[data-theme="light"] .menu-button span {
 html[data-theme="light"] .hero {
   color: var(--blue-950);
   background:
-    linear-gradient(90deg, rgba(226, 216, 192, 0.98) 0 43%, rgba(245, 238, 222, 0.98) 43% 100%),
-    #eee5d2;
+    linear-gradient(90deg, rgba(201, 223, 237, 0.98) 0 43%, rgba(238, 245, 248, 0.98) 43% 100%),
+    #dceaf3;
 }
 
 html[data-theme="light"] .hero::before {
@@ -2344,7 +2344,7 @@ html[data-theme="light"] .text-link {
 
 html[data-theme="light"] .portrait-orbit,
 html[data-theme="light"] .team-member-center .portrait-orbit {
-  box-shadow: 0 0 0 5px #f2ead9;
+  box-shadow: 0 0 0 5px #eaf2f6;
 }
 
 html[data-theme="light"] .resources-section {
@@ -2401,12 +2401,12 @@ html[data-theme="light"] .trust-section {
   color: var(--blue-950);
   background:
     linear-gradient(90deg, transparent 0 18%, rgba(101, 73, 54, 0.09) 18% 18.1%, transparent 18.1%),
-    #dce2c8;
+    #d7e7f0;
 }
 
 html[data-theme="light"] .trust-mark {
   background: transparent;
-  box-shadow: inset 0 0 0 5px #dce2c8, inset 0 0 0 6px rgba(101, 73, 54, 0.32);
+  box-shadow: inset 0 0 0 5px #d7e7f0, inset 0 0 0 6px rgba(101, 73, 54, 0.32);
 }
 
 html[data-theme="light"] .embed-page,
@@ -2415,7 +2415,7 @@ html[data-theme="light"] .schedule-page {
   background:
     linear-gradient(90deg, rgba(101, 73, 54, 0.08) 0 1px, transparent 1px) 8vw 0 / calc(100% - 16vw) 100% no-repeat,
     radial-gradient(rgba(16, 35, 43, 0.15) 0.5px, transparent 0.6px) 0 0 / 6px 6px,
-    #eee5d3;
+    #e3edf3;
 }
 
 html[data-theme="light"] .page-intro h1,
@@ -2433,9 +2433,9 @@ html[data-theme="light"] .provider-label {
 }
 
 html[data-theme="light"] .embed-wrap {
-  background: #d9dfc6;
+  background: #bad3e2;
   border-color: var(--brown-700);
-  box-shadow: inset 0 0 0 5px #d9dfc6, inset 0 0 0 6px rgba(101, 73, 54, 0.24);
+  box-shadow: inset 0 0 0 5px #bad3e2, inset 0 0 0 6px rgba(18, 58, 97, 0.2);
 }
 
 html[data-theme="light"] .embed-status {
@@ -2557,7 +2557,7 @@ html[data-theme="light"] .custom-privacy-note {
 
 html[data-theme="light"] .sound-test-button {
   color: var(--brown-700);
-  background: rgba(78, 92, 52, 0.09);
+  background: rgba(45, 106, 150, 0.09);
   border-left-color: rgba(16, 35, 43, 0.17);
 }
 
@@ -2586,8 +2586,8 @@ html[data-theme="light"] .settings-message {
 
 html[data-theme="light"] .site-footer {
   color: var(--blue-950);
-  background: #e4dbc8;
-  border-top-color: rgba(78, 92, 52, 0.45);
+  background: #d6e5ee;
+  border-top-color: rgba(18, 58, 97, 0.34);
 }
 
 html[data-theme="light"] .footer-inner p,
@@ -2611,8 +2611,8 @@ html[data-theme="light"] .not-found > p:not(.eyebrow) {
 
   html[data-theme="light"] .mobile-nav {
     color: var(--blue-950);
-    background: #f0e7d5;
-    border-left-color: rgba(78, 92, 52, 0.45);
+    background: #e2edf3;
+    border-left-color: rgba(18, 58, 97, 0.34);
   }
 
   html[data-theme="light"] .mobile-nav .nav-link {
@@ -2631,7 +2631,7 @@ html[data-theme="light"] .not-found > p:not(.eyebrow) {
   }
 
   html[data-theme="light"] .hero {
-    background: linear-gradient(180deg, #e3d8bf 0 43%, #f5eedf 43% 100%);
+    background: linear-gradient(180deg, #c9dfed 0 43%, #eef5f8 43% 100%);
   }
 }
 
@@ -2689,29 +2689,30 @@ html[data-theme="light"] .not-found > p:not(.eyebrow) {
    ================================================================ */
 
 :root {
-  --olive-1000: #171a12;
-  --olive-950: #202419;
-  --olive-900: #292e20;
-  --olive-850: #303626;
-  --olive-800: #3a412d;
-  --olive-700: #50583b;
-  --olive-600: #68734b;
+  --olive-1000: #0e2b49;
+  --olive-950: #123a61;
+  --olive-900: #1b4e79;
+  --olive-850: #255e8b;
+  --olive-800: #2d6a96;
+  --olive-700: #4b84ac;
+  --olive-600: #73a3c1;
   --brown-900: #3a2a21;
   --brown-700: #654936;
   --brown-500: #927056;
-  --blue-950: #10232b;
-  --blue-900: #162b34;
-  --blue-800: #1e3740;
-  --blue-700: #2c4850;
+  --blue-950: #123a61;
+  --blue-900: #1b4e79;
+  --blue-800: #255e8b;
+  --blue-700: #35739d;
   --gold: #b69a58;
   --gold-soft: #d4be82;
-  --purple: #8e7da1;
-  --purple-soft: #b2a2c2;
-  --beige: #eee4cf;
-  --paper: #f3ecdc;
+  --purple: #695486;
+  --purple-soft: #c0add8;
+  --olive-accent: #74804f;
+  --beige: #f2e7d2;
+  --paper: #f6efe2;
   --paper-dark: #d7c9ad;
-  --ink: #20241f;
-  --line: rgba(238, 228, 207, 0.18);
+  --ink: #17324d;
+  --line: rgba(242, 231, 210, 0.2);
   --display: "Iowan Old Style", "Palatino Linotype", Baskerville, Georgia, serif;
 }
 
@@ -2735,7 +2736,7 @@ body::before {
 
 .site-header {
   height: 72px;
-  background: rgba(16, 35, 43, 0.96);
+  background: rgba(18, 58, 97, 0.96);
   border-bottom-color: rgba(182, 154, 88, 0.28);
   backdrop-filter: blur(14px);
 }
@@ -2840,8 +2841,8 @@ body::before {
 .hero {
   min-height: calc(100svh - 72px);
   background:
-    linear-gradient(90deg, rgba(23, 26, 18, 0.98) 0 43%, rgba(41, 46, 32, 0.95) 43% 100%),
-    var(--olive-950);
+    linear-gradient(90deg, rgba(18, 58, 97, 0.98) 0 43%, rgba(27, 78, 121, 0.96) 43% 100%),
+    var(--blue-950);
   border-bottom-color: rgba(182, 154, 88, 0.3);
 }
 
@@ -3282,7 +3283,7 @@ body::before {
   right: 0;
   left: 0;
   height: 7px;
-  background: linear-gradient(90deg, var(--olive-700) 0 48%, var(--brown-700) 48% 82%, var(--purple) 82% 86%, var(--gold) 86% 100%);
+  background: linear-gradient(90deg, var(--blue-700) 0 52%, var(--brown-700) 52% 82%, var(--purple) 82% 88%, var(--gold) 88% 96%, var(--olive-accent) 96% 100%);
 }
 
 .page-intro {
