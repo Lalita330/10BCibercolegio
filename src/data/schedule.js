@@ -12,15 +12,15 @@ export const scheduleRows = [
 ]
 
 export const soundOptions = [
-  { id: 'brisa', label: 'Brisa', description: 'Dos notas suaves', file: 'assets/sonidos/brisa.wav' },
-  { id: 'luna', label: 'Luna', description: 'Campana serena', file: 'assets/sonidos/luna.wav' },
-  { id: 'bosque', label: 'Bosque', description: 'Tono cálido', file: 'assets/sonidos/bosque.wav' },
-  { id: 'aurora', label: 'Aurora', description: 'Acorde luminoso', file: 'assets/sonidos/aurora.wav' },
+  { id: 'brisa', label: 'Campana breve', description: 'Nítida · 0,7 s', file: 'assets/sonidos/campana.wav' },
+  { id: 'luna', label: 'Ding doble', description: 'Dos notas · 1,0 s', file: 'assets/sonidos/ding.wav' },
+  { id: 'bosque', label: 'Arpa', description: 'Cuatro cuerdas · 1,6 s', file: 'assets/sonidos/arpa.wav' },
+  { id: 'aurora', label: 'Institucional', description: 'Grave y sereno · 1,3 s', file: 'assets/sonidos/institucional.wav' },
 ]
 
 export const defaultNotificationSettings = {
   enabled: false,
-  sound: 'luna',
+  sound: 'brisa',
   minutesBefore: 5,
 }
 

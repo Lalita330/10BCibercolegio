@@ -1,6 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { navigation } from '../data/site'
+
+const THEME_STORAGE_KEY = 'representacion10b.theme.v1'
+
+function readTheme() {
+  try {
+    return window.localStorage.getItem(THEME_STORAGE_KEY) === 'light' ? 'light' : 'dark'
+  } catch {
+    return 'dark'
+  }
+}
 
 function Brand() {
   return (
@@ -31,7 +41,21 @@ function NavItems({ onNavigate }) {
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [theme, setTheme] = useState(readTheme)
   const location = useLocation()
+
+  useLayoutEffect(() => {
+    document.documentElement.dataset.theme = theme
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, theme)
+    } catch {
+      // El tema sigue funcionando durante la sesión aunque el almacenamiento esté bloqueado.
+    }
+    const frame = window.requestAnimationFrame(() => {
+      document.documentElement.classList.add('theme-ready')
+    })
+    return () => window.cancelAnimationFrame(frame)
+  }, [theme])
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -52,17 +76,31 @@ export default function Layout() {
           <nav className="desktop-nav" aria-label="Navegación principal">
             <NavItems />
           </nav>
-          <button
-            className="menu-button"
-            type="button"
-            aria-expanded={menuOpen}
-            aria-controls="mobile-navigation"
-            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
-            onClick={() => setMenuOpen((current) => !current)}
-          >
-            <span />
-            <span />
-          </button>
+          <div className="header-actions">
+            <button
+              className={`theme-toggle is-${theme}`}
+              type="button"
+              aria-label={theme === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro'}
+              title={theme === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro'}
+              aria-pressed={theme === 'light'}
+              onClick={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')}
+            >
+              <span className="theme-icon theme-icon-sun" aria-hidden="true">☼</span>
+              <span className="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+              <span className="sr-only">Tema {theme === 'dark' ? 'oscuro' : 'claro'}</span>
+            </button>
+            <button
+              className="menu-button"
+              type="button"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
+              aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              onClick={() => setMenuOpen((current) => !current)}
+            >
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
       </header>
 

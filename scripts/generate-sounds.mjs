@@ -7,13 +7,47 @@ const outputDirectory = resolve(projectRoot, 'public', 'assets', 'sonidos')
 const sampleRate = 22050
 
 const soundDefinitions = {
-  brisa: [{ frequency: 523.25, start: 0, duration: 0.5 }, { frequency: 659.25, start: 0.34, duration: 0.62 }],
-  luna: [{ frequency: 440, start: 0, duration: 0.82 }, { frequency: 659.25, start: 0.18, duration: 0.8 }],
-  bosque: [{ frequency: 349.23, start: 0, duration: 0.62 }, { frequency: 523.25, start: 0.42, duration: 0.65 }],
-  aurora: [{ frequency: 493.88, start: 0, duration: 0.6 }, { frequency: 622.25, start: 0.2, duration: 0.72 }, { frequency: 739.99, start: 0.42, duration: 0.7 }],
+  campana: {
+    gain: 0.22,
+    notes: [
+      { frequency: 987.77, start: 0, duration: 0.66, envelope: 'bell', harmonics: [1, 0.52, 0.22, 0.1] },
+    ],
+  },
+  ding: {
+    gain: 0.19,
+    notes: [
+      { frequency: 659.25, start: 0, duration: 0.58, envelope: 'soft', harmonics: [1, 0.1] },
+      { frequency: 880, start: 0.34, duration: 0.66, envelope: 'soft', harmonics: [1, 0.08] },
+    ],
+  },
+  arpa: {
+    gain: 0.16,
+    notes: [
+      { frequency: 523.25, start: 0, duration: 0.75, envelope: 'pluck', harmonics: [1, 0.34, 0.15] },
+      { frequency: 659.25, start: 0.17, duration: 0.82, envelope: 'pluck', harmonics: [1, 0.3, 0.12] },
+      { frequency: 783.99, start: 0.34, duration: 0.88, envelope: 'pluck', harmonics: [1, 0.25, 0.09] },
+      { frequency: 1046.5, start: 0.52, duration: 0.96, envelope: 'pluck', harmonics: [1, 0.2, 0.06] },
+    ],
+  },
+  institucional: {
+    gain: 0.17,
+    notes: [
+      { frequency: 261.63, start: 0, duration: 1.15, envelope: 'slow', harmonics: [1, 0.22, 0.08] },
+      { frequency: 392, start: 0.08, duration: 1.12, envelope: 'slow', harmonics: [1, 0.16, 0.05] },
+      { frequency: 523.25, start: 0.22, duration: 0.95, envelope: 'slow', harmonics: [1, 0.1] },
+    ],
+  },
 }
 
-function createWave(notes) {
+function getEnvelope(type, localTime, duration) {
+  const progress = localTime / duration
+  if (type === 'bell') return Math.min(1, localTime / 0.008) * Math.exp(-5.5 * progress)
+  if (type === 'pluck') return Math.min(1, localTime / 0.006) * Math.exp(-6.2 * progress)
+  if (type === 'slow') return Math.min(1, localTime / 0.075) * Math.pow(Math.max(0, 1 - progress), 1.7)
+  return Math.min(1, localTime / 0.025) * Math.pow(Math.max(0, 1 - progress), 2.3)
+}
+
+function createWave({ notes, gain }) {
   const totalDuration = Math.max(...notes.map((note) => note.start + note.duration)) + 0.12
   const sampleCount = Math.ceil(totalDuration * sampleRate)
   const dataSize = sampleCount * 2
@@ -39,11 +73,11 @@ function createWave(notes) {
     for (const note of notes) {
       const localTime = time - note.start
       if (localTime < 0 || localTime > note.duration) continue
-      const attack = Math.min(1, localTime / 0.035)
-      const release = Math.pow(Math.max(0, 1 - localTime / note.duration), 2.2)
-      const envelope = attack * release
-      sample += Math.sin(2 * Math.PI * note.frequency * localTime) * envelope * 0.2
-      sample += Math.sin(2 * Math.PI * note.frequency * 2 * localTime) * envelope * 0.035
+      const envelope = getEnvelope(note.envelope, localTime, note.duration)
+      note.harmonics.forEach((strength, harmonicIndex) => {
+        const harmonic = harmonicIndex + 1
+        sample += Math.sin(2 * Math.PI * note.frequency * harmonic * localTime) * envelope * strength * gain
+      })
     }
     const value = Math.max(-1, Math.min(1, sample))
     buffer.writeInt16LE(Math.round(value * 32767), 44 + index * 2)
@@ -53,8 +87,8 @@ function createWave(notes) {
 }
 
 mkdirSync(outputDirectory, { recursive: true })
-for (const [name, notes] of Object.entries(soundDefinitions)) {
-  writeFileSync(resolve(outputDirectory, `${name}.wav`), createWave(notes))
+for (const [name, definition] of Object.entries(soundDefinitions)) {
+  writeFileSync(resolve(outputDirectory, `${name}.wav`), createWave(definition))
 }
 
 console.log(`Sonidos creados en ${outputDirectory}`)
