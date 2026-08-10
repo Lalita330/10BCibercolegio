@@ -4309,13 +4309,13 @@ html[data-theme="light"] .embed-direct-link {
 
 @media (hover: hover) and (pointer: fine) {
   .team-member:hover .portrait-frame {
-    transform: translateY(-6px);
+    transform: translateY(-7px);
     outline-color: rgb(var(--member-glow));
     box-shadow:
-      0 0 0 2px rgba(var(--member-glow), 0.36),
-      0 0 0 5px rgba(var(--member-glow), 0.16),
-      0 0 18px rgba(var(--member-glow), 0.48),
-      0 0 28px rgba(var(--member-glow), 0.58),
+      0 0 0 2px rgba(var(--member-glow), 0.72),
+      0 0 0 6px rgba(var(--member-glow), 0.3),
+      0 0 22px rgba(var(--member-glow), 0.72),
+      0 0 38px rgba(var(--member-glow), 0.68),
       0 22px 54px rgba(22, 27, 18, 0.28);
   }
 }
