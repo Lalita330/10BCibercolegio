@@ -4303,29 +4303,8 @@ html[data-theme="light"] .embed-direct-link {
   --member-glow: 189, 172, 205;
 }
 
-.portrait-frame,
-.member-copy,
-.portrait-frame img {
-  transition: transform 260ms ease, filter 260ms ease, box-shadow 260ms ease, outline-color 260ms ease;
-}
-
-.portrait-frame::before {
-  content: "";
-  position: absolute;
-  z-index: 3;
-  inset: 5px;
-  pointer-events: none;
-  opacity: 0;
-  border-radius: 40% 40% 4px 4px / 18% 18% 4px 4px;
-  background: linear-gradient(
-    112deg,
-    transparent 24%,
-    rgba(255, 255, 255, 0.04) 38%,
-    rgba(255, 248, 225, 0.7) 49%,
-    rgba(var(--member-glow), 0.46) 54%,
-    transparent 68%
-  );
-  transform: translateX(-145%);
+.portrait-frame {
+  transition: transform 260ms ease, box-shadow 260ms ease, outline-color 260ms ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -4334,50 +4313,15 @@ html[data-theme="light"] .embed-direct-link {
     outline-color: rgb(var(--member-glow));
     box-shadow:
       0 0 0 2px rgba(var(--member-glow), 0.36),
+      0 0 0 5px rgba(var(--member-glow), 0.16),
+      0 0 18px rgba(var(--member-glow), 0.48),
       0 0 28px rgba(var(--member-glow), 0.58),
       0 22px 54px rgba(22, 27, 18, 0.28);
-  }
-
-  .team-member:hover .portrait-frame img {
-    filter: saturate(1.03) contrast(1.02) brightness(1.08);
-  }
-
-  .team-member:hover .portrait-frame::before {
-    opacity: 1;
-    animation: portrait-shine 820ms ease-out;
-  }
-
-  .team-member:hover .member-copy {
-    transform: translateY(-3px);
-    filter: brightness(1.08);
-    box-shadow: 0 12px 28px rgba(var(--member-glow), 0.3);
-  }
-}
-
-@keyframes portrait-shine {
-  0% {
-    opacity: 0;
-    transform: translateX(-145%);
-  }
-
-  22% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateX(145%);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .team-member:hover .portrait-frame,
-  .team-member:hover .member-copy {
+  .team-member:hover .portrait-frame {
     transform: none;
-  }
-
-  .team-member:hover .portrait-frame::before {
-    animation: none;
-    opacity: 0;
   }
 }
