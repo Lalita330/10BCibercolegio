@@ -1,6 +1,6 @@
-# Equipo de Representación 10B
+# 10B
 
-Sitio estático del equipo de representación de 10B (Cibercolegio UCN), construido con React, Vite, Tailwind CSS y React Router. No requiere backend ni base de datos.
+Sitio estático de 10B (Cibercolegio UCN), construido con React, Vite, Tailwind CSS y React Router. No requiere backend ni base de datos.
 
 ## Uso local
 

@@ -4,6 +4,7 @@ export default function EmbeddedPage({ page }) {
   const [loaded, setLoaded] = useState(false)
   const [slow, setSlow] = useState(false)
   const timeoutRef = useRef(null)
+  const contentType = page.provider.includes('Forms') ? 'formulario' : 'contenido'
 
   useEffect(() => {
     setLoaded(false)
@@ -36,6 +37,22 @@ export default function EmbeddedPage({ page }) {
           <span className="status-dot" />
           {loaded ? 'Contenido conectado' : 'Conectando de forma segura…'}
         </div>
+        <div className={`embed-compat${slow ? ' is-prominent' : ''}`}>
+          <div>
+            <strong>{slow ? `¿No aparece el ${contentType}?` : 'Vista integrada'}</strong>
+            <p>Si tu navegador bloquea servicios externos, usa el acceso directo.</p>
+          </div>
+          <a
+            className="embed-direct-link"
+            href={page.directUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            referrerPolicy="no-referrer"
+          >
+            Abrir {contentType} <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
         <div className="iframe-shell">
           {!loaded && (
             <div className="embed-loader" aria-hidden="true">
@@ -48,27 +65,12 @@ export default function EmbeddedPage({ page }) {
             src={page.embedUrl}
             title={page.title}
             sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
-            referrerPolicy="no-referrer"
+            referrerPolicy="strict-origin-when-cross-origin"
             loading="lazy"
             onLoad={handleLoad}
           />
         </div>
 
-        <div className={`embed-fallback${slow ? ' is-prominent' : ''}`}>
-          <div>
-            <strong>{slow ? '¿El contenido no aparece?' : 'También disponible fuera del sitio'}</strong>
-            <p>Algunos navegadores o bloqueadores de privacidad pueden impedir la vista integrada.</p>
-          </div>
-          <a
-            className="button button-secondary"
-            href={page.directUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            referrerPolicy="no-referrer"
-          >
-            Abrir en una nueva pestaña <span aria-hidden="true">↗</span>
-          </a>
-        </div>
       </div>
     </section>
   )

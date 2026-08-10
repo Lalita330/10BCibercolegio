@@ -2935,7 +2935,7 @@ body::before {
 }
 
 .podium::before {
-  content: "ARCHIVO DE REPRESENTACIÓN · 2026";
+  content: "ARCHIVO DE 10B · 2026";
   position: absolute;
   top: 18px;
   right: 0;
@@ -4203,4 +4203,89 @@ html[data-theme="light"] .footer-mark.site-logo {
   .footer-mark.site-logo {
     width: 46px;
   }
+}
+
+/* Alternativa compacta para navegadores que bloquean iframes de terceros. */
+.embed-compat {
+  min-height: 56px;
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: rgba(242, 231, 210, 0.055);
+  border: 1px solid rgba(221, 198, 129, 0.2);
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.embed-compat.is-prominent {
+  background: rgba(189, 172, 205, 0.1);
+  border-color: var(--purple-soft);
+}
+
+.embed-compat strong {
+  display: block;
+  color: var(--beige);
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.embed-compat p {
+  margin: 2px 0 0;
+  color: rgba(242, 231, 210, 0.6);
+  font-size: 0.68rem;
+}
+
+.embed-direct-link {
+  flex: 0 0 auto;
+  padding: 8px 11px;
+  color: var(--gold-soft);
+  border-bottom: 1px solid var(--gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.embed-direct-link:hover {
+  color: var(--purple-soft);
+  border-bottom-color: var(--purple-soft);
+}
+
+html[data-theme="light"] .embed-compat {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(69, 105, 122, 0.22);
+}
+
+html[data-theme="light"] .embed-compat.is-prominent {
+  background: rgba(112, 91, 131, 0.09);
+  border-color: var(--purple);
+}
+
+html[data-theme="light"] .embed-compat strong {
+  color: var(--ink);
+}
+
+html[data-theme="light"] .embed-compat p {
+  color: rgba(48, 55, 31, 0.62);
+}
+
+html[data-theme="light"] .embed-direct-link {
+  color: var(--index-accent);
+  border-bottom-color: var(--index-accent);
+}
+
+@media (max-width: 640px) {
+  .embed-compat {
+    padding: 12px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.team-member-right .portrait-frame img {
+  object-position: 50% 36%;
 }

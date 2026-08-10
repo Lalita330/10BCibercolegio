@@ -18,7 +18,7 @@ function Brand() {
     <NavLink className="brand" to="/" aria-label="Ir a la portada">
       <img className="brand-mark site-logo" src={LOGO_SRC} alt="" aria-hidden="true" />
       <span className="brand-copy">
-        <strong>Representación</strong>
+        <strong>10B</strong>
         <small>Cibercolegio UCN · 2026</small>
       </span>
     </NavLink>
@@ -131,7 +131,7 @@ export default function Layout() {
       <footer className="site-footer">
         <div className="footer-inner">
           <div>
-            <span className="footer-kicker">Equipo de Representación</span>
+            <span className="footer-kicker">10B</span>
             <p>Curso 10B · Cibercolegio UCN · 2026</p>
           </div>
           <p className="privacy-note">

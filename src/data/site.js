@@ -54,7 +54,7 @@ export const embedPages = [
     path: '/cartas-anonimas',
     eyebrow: 'Espacio de expresión',
     title: 'Cartas anónimas',
-    description: 'Un espacio en Padlet para compartir mensajes con el equipo de representación. Revisa las condiciones de privacidad del servicio antes de publicar.',
+    description: 'Un espacio en Padlet para compartir mensajes con los representantes de 10B. Revisa las condiciones de privacidad del servicio antes de publicar.',
     provider: 'Padlet',
     embedUrl: 'https://padlet.com/embed/uwvsmqgy7dhlnqek',
     directUrl: 'https://padlet.com/hsmgdjcp/cartas-anonimas-10b-uwvsmqgy7dhlnqek',

@@ -7,7 +7,7 @@ const resources = [
   { number: '02', title: 'Soporte', copy: 'Ayuda con accesos y plataformas', to: '/soporte', tone: 'purple' },
   { number: '03', title: 'Propuestas', copy: 'Ideas para construir en equipo', to: '/propuestas', tone: 'gold' },
   { number: '04', title: 'Quejas', copy: 'Un canal claro y responsable', to: '/quejas', tone: 'brown' },
-  { number: '05', title: 'Cartas anónimas', copy: 'Mensajes para la representación', to: '/cartas-anonimas', tone: 'purple' },
+  { number: '05', title: 'Cartas anónimas', copy: 'Mensajes para 10B', to: '/cartas-anonimas', tone: 'purple' },
   { number: '06', title: 'Horario', copy: 'Clases y recordatorios locales', to: '/horario', tone: 'gold' },
   { number: '07', title: 'Circulares', copy: 'Información institucional 2026', to: '/circulares', tone: 'brown' },
 ]
@@ -21,7 +21,7 @@ export default function HomePage() {
         <div className="hero-orb hero-orb-two" aria-hidden="true" />
         <div className="hero-inner page-container">
           <div className="hero-copy">
-            <p className="eyebrow"><span />Representación estudiantil · 2026</p>
+            <p className="eyebrow"><span />Curso 10B · 2026</p>
             <h1>Un equipo cercano.<br /><em>Una voz compartida.</em></h1>
             <p className="hero-lead">
               El punto de encuentro de 10B para participar, organizarse y mantenerse al día con claridad y confianza.
@@ -36,13 +36,13 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="podium" aria-label="Equipo de representación de 10B">
+          <div className="podium" aria-label="Representantes de 10B">
             {team.map((person) => <TeamPortrait key={person.name} person={person} />)}
             <div className="podium-line" aria-hidden="true"><span>Equipo 10B</span></div>
           </div>
         </div>
         <div className="hero-foot page-container">
-          <p>Equipo de Representación 10B — 2026</p>
+          <p>10B — 2026</p>
           <span className="hero-foot-line" />
           <span>Escuchar · Representar · Construir</span>
         </div>
