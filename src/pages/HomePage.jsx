@@ -22,9 +22,9 @@ export default function HomePage() {
         <div className="hero-inner page-container">
           <div className="hero-copy">
             <p className="eyebrow"><span />Curso 10B · 2026</p>
-            <h1>Un equipo cercano.<br /><em>Una voz compartida.</em></h1>
+            <h1>Un espacio seguro<br /><em>para el mejor grupo</em></h1>
             <p className="hero-lead">
-              El punto de encuentro de 10B para participar, organizarse y mantenerse al día con claridad y confianza.
+              Aquí encuentras el horario, las propuestas y los avisos del curso, sin estar sufriendo.
             </p>
             <div className="hero-actions">
               <Link className="button button-primary" to="/propuestas">
