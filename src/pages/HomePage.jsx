@@ -78,9 +78,9 @@ export default function HomePage() {
           </div>
           <div className="trust-copy">
             <p className="eyebrow"><span />Privacidad desde el diseño</p>
-            <h2>Tu información no vive aquí.</h2>
+            <h2>Tu privacidad se respeta</h2>
             <p>
-              Los formularios se comunican directamente con sus plataformas oficiales. Este sitio no tiene cuentas, bases de datos ni seguimiento de estudiantes.
+              Cuando llenas los formularios es de forma privada; no necesitas poner tu nombre en Propuestas ni Quejas.
             </p>
           </div>
           <div className="trust-facts">

@@ -135,7 +135,7 @@ export default function Layout() {
             <p>Curso 10B · Cibercolegio UCN · 2026</p>
           </div>
           <p className="privacy-note">
-            Este sitio no recopila respuestas ni datos personales. Las preferencias de avisos permanecen únicamente en este dispositivo.
+            No se guarda ninguna respuesta ni dato tuyo. Las preferencias de avisos solo quedan en tu propio dispositivo y más adelante se podrá iniciar sesión para evitar perder archivos.
           </p>
           <NavLink to="/" className="footer-logo-link" aria-label="Volver al inicio">
             <img className="footer-mark site-logo" src={LOGO_SRC} alt="" aria-hidden="true" />
