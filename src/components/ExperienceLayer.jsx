@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const INTRO_TEXT = 'Bienvenid@ a la página de 10°B'
 const EXPERIENCE_STORAGE_KEY = 'representacion10b.experience.v1'
@@ -17,72 +17,6 @@ function shouldPlayExperience() {
   } catch {
     return true
   }
-}
-
-function CustomCursor() {
-  const cursorRef = useRef(null)
-
-  useEffect(() => {
-    const cursor = cursorRef.current
-    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)')
-    if (!cursor || !finePointer.matches) return undefined
-
-    const root = document.documentElement
-    let frame = 0
-    let x = -80
-    let y = -80
-
-    const renderCursor = () => {
-      cursor.getAnimations().forEach((animation) => animation.cancel())
-      cursor.animate(
-        [{ transform: `translate3d(${x}px, ${y}px, 0)` }],
-        { duration: 90, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'forwards' },
-      )
-      frame = 0
-    }
-
-    const handlePointerMove = (event) => {
-      x = event.clientX
-      y = event.clientY
-      cursor.classList.add('is-visible')
-      const target = event.target instanceof Element ? event.target : null
-      cursor.classList.toggle(
-        'is-interactive',
-        Boolean(target?.closest('a, button, input, select, textarea, [role="button"]')),
-      )
-      if (!frame) frame = window.requestAnimationFrame(renderCursor)
-    }
-
-    const handlePointerDown = () => cursor.classList.add('is-pressed')
-    const handlePointerUp = () => cursor.classList.remove('is-pressed')
-    const handlePointerLeave = () => cursor.classList.remove('is-visible')
-
-    root.classList.add('has-custom-cursor')
-    window.addEventListener('pointermove', handlePointerMove, { passive: true })
-    window.addEventListener('pointerdown', handlePointerDown, { passive: true })
-    window.addEventListener('pointerup', handlePointerUp, { passive: true })
-    document.addEventListener('mouseleave', handlePointerLeave)
-
-    return () => {
-      root.classList.remove('has-custom-cursor')
-      window.removeEventListener('pointermove', handlePointerMove)
-      window.removeEventListener('pointerdown', handlePointerDown)
-      window.removeEventListener('pointerup', handlePointerUp)
-      document.removeEventListener('mouseleave', handlePointerLeave)
-      if (frame) window.cancelAnimationFrame(frame)
-      cursor.getAnimations().forEach((animation) => animation.cancel())
-    }
-  }, [])
-
-  return (
-    <span ref={cursorRef} className="custom-cursor" aria-hidden="true">
-      <span className="custom-cursor-visual">
-        <span className="custom-cursor-halo" />
-        <span className="custom-cursor-ring" />
-        <span className="custom-cursor-core" />
-      </span>
-    </span>
-  )
 }
 
 export default function ExperienceLayer() {
@@ -153,8 +87,6 @@ export default function ExperienceLayer() {
 
   return (
     <>
-      <CustomCursor />
-
       {(phase === 'intro' || phase === 'opening') && (
         <div
           className={`intro-experience${phase === 'opening' ? ' is-opening' : ''}`}
