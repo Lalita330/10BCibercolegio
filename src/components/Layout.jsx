@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { navigation } from '../data/site'
+import ExperienceLayer from './ExperienceLayer'
 
 const THEME_STORAGE_KEY = 'representacion10b.theme.v2'
 const LOGO_SRC = `${import.meta.env.BASE_URL}assets/brand/logo-10b.webp`
@@ -70,6 +71,7 @@ export default function Layout() {
 
   return (
     <div className="site-shell">
+      <ExperienceLayer />
       <a className="skip-link" href="#contenido">Saltar al contenido</a>
       <header className="site-header">
         <div className="header-inner">
