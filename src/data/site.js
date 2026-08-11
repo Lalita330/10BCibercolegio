@@ -80,7 +80,7 @@ export const team = [
   },
   {
     name: 'Habyba Sarita Martínez Guaidia',
-    image: '/assets/equipo/habyba-sarita.jpg',
+    image: '/assets/equipo/habyba-sarita-agosto-2026.jpg',
     position: 'center',
   },
   {
